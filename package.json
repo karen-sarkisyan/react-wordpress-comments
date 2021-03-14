@@ -25,7 +25,7 @@
     "test:watch": "nwb test-react --server"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": "^16.8"
   },
   "devDependencies": {
     "eslint": "^7.22.0",
