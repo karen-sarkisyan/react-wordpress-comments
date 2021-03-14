@@ -1,0 +1,87 @@
+.comment-body,
+.comment-respond {
+  padding: 1.5em;
+  margin: 0 0 1.5em;
+  overflow: auto;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+.comment-header,
+.comment-submit {
+  overflow: auto;
+}
+
+.comment-submit button {
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.comment-avatar,
+.comment-meta {
+  float: left;
+}
+
+.comment-meta {
+  margin-left: 0.5em;
+}
+
+.comment-reply-link a,
+.reply-title small {
+  float: right;
+}
+
+.comment-children {
+  padding-left: 5%;
+}
+
+.comment-respond fieldset {
+  display: inline-block;
+}
+
+fieldset input {
+  float: right;
+}
+
+.comment-respond textarea {
+  display: block;
+  width: 100%;
+}
+
+.comment-list,
+.comment-children {
+  margin: 0;
+  list-style: none;
+}
+
+.comments-area .loader {
+  display: inline-block;
+  vertical-align: middle;
+  border: 2px solid transparent;
+  border-bottom: 2px solid;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  margin: 0.2em auto;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

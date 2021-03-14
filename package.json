@@ -1,7 +1,11 @@
 {
   "name": "react-wordpress-comments",
   "version": "1.0.0",
-  "description": "react-wordpress-comments React component",
+  "description": "A react component for headless WordPress that fetches and publishes comments via REST API",
+  "author": "Karen Sarkisyan <karen.sarkisyan01@gmail.com> (https://github.com/karen-sarkisyan)",
+  "homepage": "https://github.com/karen-sarkisyan/react-wordpress-comments#readme",
+  "license": "MIT",
+  "repository": "https://github.com/karen-sarkisyan/react-wordpress-comments",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -12,6 +16,7 @@
   ],
   "scripts": {
     "build": "nwb build-react-component",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
     "start": "nwb serve-react-demo",
@@ -19,20 +24,23 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
     "nwb": "0.25.x",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": "",
   "keywords": [
-    "react-component"
+    "react",
+    "wordpress",
+    "headless"
   ]
 }
