@@ -10,7 +10,9 @@
 
 <!-- [![Coveralls][coveralls-badge]][coveralls] -->
 
-Easily add comments to your headless WordPress with react-wordpress-comments component. It uses native WordPress REST API, so you don't need any additional configuration in most cases.
+Easily add comments to your headless WordPress with **react-wordpress-comments** component.
+
+It uses native WordPress REST API, so you don't need any additional configuration in most cases.
 
 Using is as simple as this:
 
@@ -41,7 +43,7 @@ It's an **alpha version**. See [ongoing development](#ongoing-development) secti
 
 - react 16.8 or higher as a peer dependency.
 
-## Installation and usage
+## 🚀 Installation and usage
 
 1. Install package in your repository with a React app:
 
@@ -111,9 +113,11 @@ To allow anonymous posting of comments via REST API you need to add a code snipp
 
 When we use decoupled architecture, the requests are cross-origin.
 
-WP REST API allows CORS by default. However, your server configuration might be set differently, and it would prevent comments from being posted and/or fetched. If you receive CORS errors, you may need to manually add headers that allow all origins, or use a [plugin](https://github.com/ahmadawais/WP-REST-Allow-All-CORS/). For more security, allow only one origin where your front end lives.
+WP REST API allows CORS by default. However, your server configuration might be set differently, and it would prevent comments from being posted and/or fetched. If you receive CORS errors, you may need to manually add headers that allow all origins, or use a [plugin](https://github.com/ahmadawais/WP-REST-Allow-All-CORS/). For more security, allow only one origin where your front end lives. However, allowing origin in headers is not the only thing that may prevent your browser to make a CORS request, you may need to configure your server or browser.
 
 #### Rest API endpoint url
+
+By default comments are fetched from `{your-wp-host}/wp-json/wp/v2/comments` endpoint.
 
 If you're using non-pretty permalinks, your REST API endpoint URL may be different from standard, in this case the component won't work. As of now the only way to change it is to change the source code of the component.
 
@@ -137,7 +141,7 @@ Otherwise use your own stylesheet without importing component's styles at all. M
 
 Upgrades, features and bugfixes to come:
 
-- Error boundaries and better error handling. At this point the component may crash your app if there is an error :(
+- Error boundaries and better error handling. At this point the component may crash your app if there is an error ☹️
 - Tests and CI automation
 - Links processing. If you don't specify your frontend host in WordPress, the links within comments will point to your backend host.
 - Add an easy way to change text strings and implement i18n.
