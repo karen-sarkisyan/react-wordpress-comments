@@ -1,3 +1,5 @@
+This project uses [nwb](https://github.com/insin/nwb) to run hot-reloading demo and configure packaging process.
+
 ## Prerequisites
 
 [Node.js](http://nodejs.org/) >= 10 must be installed.

@@ -6,7 +6,7 @@
 
 <!-- [![Travis][build-badge]][build] -->
 
-[![npm package][npm-badge]][npm]
+![npm](https://img.shields.io/npm/v/react-wordpress-comments)
 
 <!-- [![Coveralls][coveralls-badge]][coveralls] -->
 
