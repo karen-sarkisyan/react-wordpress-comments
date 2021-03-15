@@ -2,7 +2,7 @@ import React from "react"
 import { render } from "react-dom"
 
 import WpComments from "../../src"
-import "../../src/styles.css"
+import "../../css/styles.css"
 
 function Demo() {
   return (
@@ -10,8 +10,8 @@ function Demo() {
       <h1>react-wordpress-comments Demo</h1>
       <WpComments
         maxDepth={3}
-        pageId={2}
-        hostUrl="http://wordpress-for-fun.000webhostapp.com"
+        pageId={619}
+        hostUrl="http://localhost:8888/localsite_new3"
         allowComments={true}
         user={null}
       />

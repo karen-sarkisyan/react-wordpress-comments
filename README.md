@@ -55,8 +55,8 @@ npm install react-wordpress-comments
 
 ```javascript
 import React from "react"
-import WpComment from "react-wordpress-comments"
-import "react-wordpress-comments/styles.css"
+import WpComments from "react-wordpress-comments"
+import "react-wordpress-comments/css/styles.css"
 
 function MyComponent() {
   return (
@@ -130,7 +130,7 @@ Simply copy the content from `src/` folder of this repo and drop it into your Re
 The package has a `styles.css` file that provides some basic styles and a loader spinner. If you import it along with the component like this:
 
 ```javascript
-import "react-wordpress-comments/styles.css"
+import "react-wordpress-comments/css/styles.css"
 ```
 
 It uses very minimal styling, most of its look will be inherited so that the comments match overall style of your page. You can override styles by using more specific selectors.
