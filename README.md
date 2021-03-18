@@ -12,7 +12,9 @@
 
 Easily add comments to your headless WordPress with **react-wordpress-comments** component.
 
-It uses native WordPress REST API, so you don't need any additional configuration in most cases.
+Here's [a working demo](https://react-wp-comments.netlify.app/), where you can even check it out. Even with your own WordPress endpoint. Comment posting works, so be careful :)
+
+**react-wordpress-comments** uses native WordPress REST API, so you don't need any additional configuration in most cases.
 
 Using is as simple as this:
 
@@ -123,7 +125,7 @@ If you're using non-pretty permalinks, your REST API endpoint URL may be differe
 
 ## Alternative way to use this component
 
-Simply copy the content from `src/` folder of this repo and drop it into your React app's `src/components/wpComments` folder (or whatever structure you use). Then simply import it like you would any other component you've written.
+Simply copy the content from `src/` folder of this repo and drop it into your React app's `src/components/wpComments` folder (or whatever structure you use). Then simply import it like you would any other component you've written. Don't forget to grab `/css/styles.css` file too if you need it :)
 
 ## Styling
 
