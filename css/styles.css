@@ -54,6 +54,10 @@ fieldset input {
   list-style: none;
 }
 
+.comment-list {
+  padding-inline-start: 0px;
+}
+
 .comments-area .loader {
   display: inline-block;
   vertical-align: middle;
