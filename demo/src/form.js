@@ -55,7 +55,7 @@ export default function Form(props) {
         <br />
       </div>
       <p>{`/>`}</p>
-      <button>Re-render below ⟲</button>
+      <button style={{ marginTop: "10px" }}>Re-render below ⟲</button>
     </form>
   )
 }

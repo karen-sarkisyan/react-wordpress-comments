@@ -1,0 +1,13 @@
+html {
+  background-color: #d1e4dd;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  color: rgb(40, 48, 61);
+}
+
+.site-header {
+  text-align: center;
+}
