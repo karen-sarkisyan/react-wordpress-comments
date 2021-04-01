@@ -1,6 +1,6 @@
 /coverage
 /demo/dist
-/demo/.DS_Store
+.DS_Store
 /es
 /lib
 /node_modules
