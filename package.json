@@ -1,6 +1,6 @@
 {
   "name": "react-wordpress-comments",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A react component for headless WordPress that fetches and publishes comments via REST API",
   "author": "Karen Sarkisyan <karen.sarkisyan01@gmail.com> (https://github.com/karen-sarkisyan)",
   "homepage": "https://github.com/karen-sarkisyan/react-wordpress-comments#readme",
@@ -25,7 +25,7 @@
     "test:watch": "nwb test-react --server"
   },
   "peerDependencies": {
-    "react": "^16.8"
+    "react": "^16.8.0 || ^17.0.0"
   },
   "devDependencies": {
     "eslint": "^7.22.0",
