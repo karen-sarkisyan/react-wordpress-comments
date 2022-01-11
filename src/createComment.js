@@ -15,7 +15,7 @@ function CreateComment(props) {
     }
     // if provided, add JWT auth header
     if (props.user) {
-      reqHeaders.Authorization = `Bearer: ${props.user.jwt}`
+      reqHeaders.Authorization = `Bearer ${props.user.jwt}`
     }
 
     let payload = {
