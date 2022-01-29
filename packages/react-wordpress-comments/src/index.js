@@ -39,9 +39,8 @@ function WpComments({ hostUrl, maxDepth, pageId, allowComments, user }) {
       .then(resultData => {
         const commentsNumber = resultData.length
 
-        const [topElements, childrenElements] = separateParentsChildren(
-          resultData
-        )
+        const [topElements, childrenElements] =
+          separateParentsChildren(resultData)
         setState({
           topElements,
           childrenElements,

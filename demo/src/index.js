@@ -1,8 +1,8 @@
 import React from "react"
 import { render } from "react-dom"
+import WpComments from "react-wordpress-comments"
+import "react-wordpress-comments/css/styles.css"
 
-import WpComments from "../../src"
-import "../../css/styles.css"
 import Form from "./form"
 import "./demo-styles.css"
 
@@ -74,4 +74,4 @@ function Demo() {
   )
 }
 
-render(<Demo />, document.querySelector("#demo"))
+render(<Demo />, document.querySelector("#app"))
