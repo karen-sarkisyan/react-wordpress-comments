@@ -1,30 +1,21 @@
-This project uses [nwb](https://github.com/insin/nwb) to run hot-reloading demo and configure packaging process.
+This project uses [Parcel](https://parceljs.org/) and npm workspaces to work with `react-wordpress-comments` and see a demo.
 
 ## Prerequisites
 
-[Node.js](http://nodejs.org/) >= 10 must be installed.
+[Node.js](http://nodejs.org/) >= 16 must be installed for npm workspaces to work correctly.
 
 ## Installation
 
-- Running `npm install` in the component's root directory will install everything you need for development.
+- Running `npm install` in the root of the repo will install all dependencies.
 
 ## Demo Development Server
 
-- `npm start` will run a development server with the component's demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading.
+Dev server is serving our demo website that renders a component.
 
-## Running Tests
-
-There are no tests yet, but they're coming soon.
-
-<!--
-- `npm test` will run the tests once.
-
-- `npm run test:coverage` will run the tests and produce a coverage report in `coverage/`.
-
-- `npm run test:watch` will run the tests on every change. -->
+- `npm start` will start server at [http://localhost:1234](http://localhost:1234) or another URL prompted in your console. Updating code will trigger hot reload of what you see on the screen.
 
 ## Building
 
-- `npm run build` will build the component for publishing to npm and also bundle the demo app.
+If you want to build, use these command:
 
-- `npm run clean` will delete built resources.
+- `npm run build` will build the component and also bundle the demo app.

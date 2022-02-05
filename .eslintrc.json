@@ -6,7 +6,7 @@
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],
-  "ignorePatterns": ["/demo/dist", "/es", "/lib"],
+  "ignorePatterns": ["/demo/dist", "/packages/react-wordpress-comments/dist"],
   "rules": {
     "react/prop-types": 0,
     "no-console": 1
