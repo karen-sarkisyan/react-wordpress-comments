@@ -1,8 +1,9 @@
 /coverage
-/demo/dist
+dist
 .DS_Store
-/es
-/lib
-/node_modules
+packages/react-wordpress-comments/es
+packages/react-wordpress-comments/lib
+node_modules
 /umd
 npm-debug.log*
+.parcel-cache

@@ -3,9 +3,29 @@ import CreateComment from "./createComment"
 import CommentTree from "./commentTree"
 import separateParentsChildren from "./utils/separateParentsChildren"
 
-function WpComments({ hostUrl, maxDepth, pageId, allowComments, user }) {
+type User = {
+  name: string
+  email: string
+  jwt: string
+}
+
+type WpCommentsProps = {
+  hostUrl: string
+  pageId: number
+  allowComments: boolean
+  maxDepth?: number
+  user?: User
+}
+
+function WpComments({
+  hostUrl,
+  maxDepth,
+  pageId,
+  allowComments,
+  user,
+}: WpCommentsProps) {
   // main comment tree state
-  const [state, setState] = useState({
+  const [state, setState] = useState<any>({
     topElements: null,
     childrenElements: null,
     commentsNumber: 0,
@@ -29,6 +49,7 @@ function WpComments({ hostUrl, maxDepth, pageId, allowComments, user }) {
       url.searchParams.append(key, params[key])
     )
 
+    // @ts-ignore
     fetch(url, {
       method: "GET",
       headers: {
@@ -39,9 +60,8 @@ function WpComments({ hostUrl, maxDepth, pageId, allowComments, user }) {
       .then(resultData => {
         const commentsNumber = resultData.length
 
-        const [topElements, childrenElements] = separateParentsChildren(
-          resultData
-        )
+        const [topElements, childrenElements] =
+          separateParentsChildren(resultData)
         setState({
           topElements,
           childrenElements,
@@ -93,4 +113,4 @@ function WpComments({ hostUrl, maxDepth, pageId, allowComments, user }) {
   }
 }
 
-export default WpComments
+export { WpComments }
