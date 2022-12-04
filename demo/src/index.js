@@ -1,5 +1,5 @@
 import React from "react"
-import { render } from "react-dom"
+import { createRoot } from "react-dom/client"
 import WpComments from "react-wordpress-comments"
 import "react-wordpress-comments/css/styles.css"
 
@@ -44,11 +44,9 @@ function Demo() {
           Play with the component below by passing the props just like you would
           in your actual project.
         </p>
-        <hr />
 
         <Form setState={setState} />
 
-        <hr />
         <p>
           Note: you need to use https protocol in URL, otherwise your browser
           won&apos;t allow fetching data from this page. Re-fetching only
@@ -60,8 +58,7 @@ function Demo() {
         </p>
       </div>
       <hr />
-      <hr />
-      <div className="default-max-width">
+      <div className="default-max-width wp-comments-section">
         <WpComments
           maxDepth={state.maxDepth}
           pageId={state.pageId}
@@ -74,4 +71,6 @@ function Demo() {
   )
 }
 
-render(<Demo />, document.querySelector("#app"))
+const container = document.getElementById("app")
+const root = createRoot(container)
+root.render(<Demo />)

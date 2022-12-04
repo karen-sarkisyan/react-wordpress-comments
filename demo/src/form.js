@@ -13,11 +13,11 @@ export default function Form(props) {
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler} className="props-input-form">
       <p>{`<WpComments`}</p>
       <div style={{ paddingLeft: "20px" }}>
         <label>
-          {"maxDepth = {"}
+          {"maxDepth={"}
           <input
             type="number"
             min="0"
@@ -31,13 +31,13 @@ export default function Form(props) {
         </label>
         <br />
         <label>
-          {"pageId = {"}
+          {"pageId={"}
           <input type="number" name="pageid" defaultValue={2} required></input>
           {"}"}
         </label>
         <label>
           <br />
-          {'hostUrl = {"'}
+          {'hostUrl={"'}
           <input
             type="url"
             name="hosturl"
@@ -48,14 +48,14 @@ export default function Form(props) {
         </label>
         <br />
         <label>
-          {"allowComments = {"}
+          {"allowComments={"}
           <input type="checkbox" name="allowcomments" defaultChecked></input>
           {"}"}
         </label>
         <br />
       </div>
       <p>{`/>`}</p>
-      <button style={{ marginTop: "10px" }}>Re-render below ⟲</button>
+      <button>Re-render below ⟲</button>
     </form>
   )
 }

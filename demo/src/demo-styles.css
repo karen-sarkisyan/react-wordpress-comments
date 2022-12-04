@@ -1,13 +1,162 @@
+/* Stypes for demo page */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #815bff;
+  --text-default-color: rgb(40, 48, 61);
+}
+
 html {
-  background-color: #d1e4dd;
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--main-color);
+}
+
+a {
+  color: var(--main-color);
+}
+
+a:hover {
+  text-decoration-style: dotted;
 }
 
 .content {
   max-width: 800px;
   margin: auto;
-  color: rgb(40, 48, 61);
+  color: var(--text-default-color);
 }
 
 .site-header {
   text-align: center;
+}
+
+hr {
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--main-color) 5% 95%,
+    transparent 100%
+  );
+  border: 0;
+  height: 1px;
+}
+
+.props-input-form {
+  font-family: monospace;
+  max-width: 500px;
+  background-color: #e3ddee;
+  border-radius: 8px;
+  padding: 10px 20px;
+}
+
+.props-input-form p {
+  margin: 5px 0;
+}
+
+.props-input-form input {
+  border: 0;
+}
+
+.props-input-form input[type="number"] {
+  width: 30px;
+}
+
+.props-input-form button {
+  border: 0;
+  background-color: var(--main-color);
+  color: white;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  transition: transform 0.1s;
+}
+
+.props-input-form button:hover {
+  transform: scale(1.03);
+}
+
+.props-input-form button:active {
+  transform: scale(0.99);
+}
+
+/* Stypes for comments */
+
+.wp-comments-section .comment-body,
+.wp-comments-section .comment-respond {
+  border-radius: 9px;
+  border: none;
+  box-shadow: 0 6px 12px -2px rgb(50 50 93 / 25%),
+    0 3px 7px -3px rgb(0 0 0 / 30%);
+}
+
+.comment .comment-avatar {
+  border-radius: 50%;
+}
+
+.comment .comment-meta p {
+  margin: 0.5em 0;
+  color: gray;
+}
+
+.comment-respond .reply-title {
+  margin-top: 0px;
+}
+
+.comment-respond .comment-submit-info {
+  margin-bottom: 0px;
+}
+
+.comment-respond fieldset {
+  border: none;
+  padding: 0;
+}
+
+.comment-respond fieldset label {
+  margin-right: 10px;
+}
+
+.comment-input-content textarea {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.comment-submit button {
+  border: 0;
+  background-color: var(--main-color);
+  color: white;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  transition: transform 0.1s;
+}
+
+.comment-submit button:hover {
+  transform: scale(1.02);
+}
+
+.comment-submit button:active {
+  transform: scale(0.99);
+}
+
+.comment-respond .comment-submit {
+  overflow: visible;
+}
+
+.comment-submit .loader {
+  margin-left: 10px;
 }
