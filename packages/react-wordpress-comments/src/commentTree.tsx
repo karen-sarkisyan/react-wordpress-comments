@@ -1,23 +1,29 @@
 import React from "react"
 import Comment from "./comment"
 
+import { CommentData, User } from "./typings"
+
 export default function CommentTree(
-  topElements,
-  childrenElements,
-  maxDepth,
-  depth,
-  parentId,
-  pageId,
-  restUrl,
-  setParentId,
-  allowComments,
-  user
-) {
+  topElements: CommentData[],
+  childrenElements: Array<Array<CommentData>>,
+  maxDepth: number | undefined = 0,
+  depth: number,
+  parentId: number,
+  pageId: number,
+  restUrl: string,
+  setParentId: (id: number) => void,
+  allowComments: boolean,
+  user?: User
+): React.ReactElement {
   // see function body below
   return buildTree(topElements, childrenElements, depth)
 
   //nested recursive function to build the tree
-  function buildTree(topElements, childrenElements, depth) {
+  function buildTree(
+    topElements: CommentData[],
+    childrenElements: Array<Array<CommentData>>,
+    depth: number
+  ) {
     return (
       <>
         {topElements.map(element => {

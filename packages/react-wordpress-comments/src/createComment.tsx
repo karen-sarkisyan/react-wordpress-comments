@@ -2,7 +2,18 @@ import React, { useState } from "react"
 import SubmitButton from "./submitButton"
 import apiSubmitHandler from "./utils/apiSubmitHandler"
 
-function CreateComment(props) {
+import type { User } from "./typings"
+
+type CreateCommentProps = {
+  pageId: number
+  restUrl: string
+  parentId: number
+  setParentId?: (id: number) => void
+  allowComments: boolean
+  user?: User
+}
+
+function CreateComment(props: CreateCommentProps) {
   const [submitting, setSubmitting] = useState(false)
   const [response, setResponse] = useState("")
 
@@ -10,7 +21,7 @@ function CreateComment(props) {
   function submitComment(event) {
     event.preventDefault()
 
-    let reqHeaders = {
+    let reqHeaders: { [header: string]: string } = {
       "Content-Type": "application/json",
     }
     // if provided, add JWT auth header
@@ -47,7 +58,7 @@ function CreateComment(props) {
   function cancelResponse(e) {
     e.preventDefault()
     // set parent to 0
-    props.setParentId(0)
+    props.setParentId!(0)
   }
 
   if (props.allowComments) {
@@ -84,7 +95,7 @@ function CreateComment(props) {
                     Name*:
                     <input
                       title="Name to be displayed on comment, 30 symbols max"
-                      maxLength="30"
+                      maxLength={30}
                       name="author_name"
                       required
                     />
@@ -110,15 +121,16 @@ function CreateComment(props) {
               Write your comment*:
               <textarea
                 placeholder="Your comment here..."
-                maxLength="2000"
+                maxLength={2000}
                 name="comment_content"
+                rows={4}
                 required
               ></textarea>
             </label>
           </p>
 
-          <SubmitButton submitting={submitting} />
-          <p>{response}</p>
+          <SubmitButton isSubmitting={submitting} />
+          {response && <p className="comment-submit-info">{response}</p>}
         </form>
       </div>
     )
