@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react"
+import * as React from "react"
 
 import { TranslationsContext } from "./context/translationsContext"
 import SubmitButton from "./submitButton"
@@ -16,10 +16,10 @@ type CreateCommentProps = {
 }
 
 function CreateComment(props: CreateCommentProps) {
-  const [submitting, setSubmitting] = useState(false)
-  const [response, setResponse] = useState("")
+  const [submitting, setSubmitting] = React.useState(false)
+  const [response, setResponse] = React.useState("")
 
-  const translations = useContext(TranslationsContext)
+  const translations = React.useContext(TranslationsContext)
 
   // This function gets executed only if native HTML form validation is passed
   function submitComment(event) {

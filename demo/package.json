@@ -13,12 +13,12 @@
     "react-wordpress-comments": "^0.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.28.0",
+    "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
-    "parcel": "^2.8.0",
+    "parcel": "^2.8.2",
     "prettier": "^2.7.1"
   }
 }

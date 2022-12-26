@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { createRoot } from "react-dom/client"
 import WpComments from "react-wordpress-comments"
 import "react-wordpress-comments/css/styles.css"
@@ -7,7 +7,7 @@ import Form from "./form"
 import "./demo-styles.css"
 
 function Demo() {
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     maxDepth: 3,
     pageId: 2,
     hostUrl: "https://wpsite.locarb.io",
