@@ -1,4 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+
+import { TranslationsContext } from "./context/translationsContext"
 import SubmitButton from "./submitButton"
 import apiSubmitHandler from "./utils/apiSubmitHandler"
 
@@ -16,6 +18,8 @@ type CreateCommentProps = {
 function CreateComment(props: CreateCommentProps) {
   const [submitting, setSubmitting] = useState(false)
   const [response, setResponse] = useState("")
+
+  const translations = useContext(TranslationsContext)
 
   // This function gets executed only if native HTML form validation is passed
   function submitComment(event) {
@@ -65,12 +69,12 @@ function CreateComment(props: CreateCommentProps) {
     return (
       <div className="comment-respond">
         <h3 className="reply-title">
-          Leave comment
+          {translations.leaveCommentHeading}
           {props.parentId ? (
             // if comment was selected as a response, add close button
             <small>
               <a onClick={cancelResponse} href={`#comment-${props.parentId}`}>
-                Cancel X
+                {translations.cancelLinkLabel}
               </a>
             </small>
           ) : null}
@@ -79,7 +83,10 @@ function CreateComment(props: CreateCommentProps) {
           {props.user ? (
             // if there's a user authorized, hide inputs and inform the user
             <>
-              <p>You are logged in as {props.user.name}</p>
+              <p>
+                {translations.loggedInUserIntro}
+                {props.user.name}
+              </p>
               <input type="hidden" name="author_name" value={props.user.name} />
               <input
                 type="hidden"
@@ -92,7 +99,7 @@ function CreateComment(props: CreateCommentProps) {
               <fieldset>
                 <p className="comment-input-name">
                   <label>
-                    Name*:
+                    {translations.nameInputLabel}
                     <input
                       title="Name to be displayed on comment, 30 symbols max"
                       maxLength={30}
@@ -103,7 +110,7 @@ function CreateComment(props: CreateCommentProps) {
                 </p>
                 <p className="comment-input-email">
                   <label>
-                    Email*:
+                    {translations.emailInputLabel}
                     <input
                       type="email"
                       title="A valid email address of the author"
@@ -118,9 +125,9 @@ function CreateComment(props: CreateCommentProps) {
 
           <p className="comment-input-content">
             <label>
-              Write your comment*:
+              {translations.commentInputLabel}
               <textarea
-                placeholder="Your comment here..."
+                placeholder={translations.commentInputPlaceholder}
                 maxLength={2000}
                 name="comment_content"
                 rows={4}
@@ -137,7 +144,7 @@ function CreateComment(props: CreateCommentProps) {
   } else {
     return (
       <div>
-        <p>Comments are closed</p>
+        <p>{translations.commentsClosedNotice}</p>
       </div>
     )
   }

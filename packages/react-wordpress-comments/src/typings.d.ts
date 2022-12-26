@@ -31,3 +31,18 @@ export type User = {
   email: string
   jwt: string
 }
+
+export type Translations = {
+  mainHeading?: string
+  leaveCommentHeading?: string
+  loadingCommentsLabel?: string
+  respondLinkLabel?: string
+  loggedInUserIntro?: string
+  nameInputLabel?: string
+  emailInputLabel?: string
+  commentInputLabel?: string
+  commentInputPlaceholder?: string
+  submitButtonLabel?: string
+  cancelLinkLabel?: string
+  commentsClosedNotice?: string
+}

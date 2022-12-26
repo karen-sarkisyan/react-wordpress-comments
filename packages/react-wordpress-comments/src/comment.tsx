@@ -1,4 +1,5 @@
 import React from "react"
+
 import CreateComment from "./createComment"
 import ResponseLink from "./responseLink"
 
@@ -66,5 +67,5 @@ function Comment(props: CommentProps) {
     </li>
   )
 }
-// dangerouslySetInnerHTML={{ __html: props.comment.content.rendered }}
+
 export default Comment

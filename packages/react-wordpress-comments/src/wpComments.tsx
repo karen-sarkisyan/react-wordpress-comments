@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react"
+
+import type { Translations, User } from "./typings"
+import { TranslationsProvider } from "./context/translationsContext"
 import CreateComment from "./createComment"
 import CommentTree from "./commentTree"
 import separateParentsChildren from "./utils/separateParentsChildren"
-
-type User = {
-  name: string
-  email: string
-  jwt: string
-}
 
 type WpCommentsProps = {
   hostUrl: string
@@ -15,6 +12,7 @@ type WpCommentsProps = {
   allowComments: boolean
   maxDepth?: number
   user?: User
+  translationOverrides?: Translations
 }
 
 function WpComments({
@@ -23,6 +21,7 @@ function WpComments({
   pageId,
   allowComments,
   user,
+  translationOverrides,
 }: WpCommentsProps) {
   // main comment tree state
   const [state, setState] = useState<any>({
@@ -49,7 +48,6 @@ function WpComments({
       url.searchParams.append(key, params[key])
     )
 
-    // @ts-ignore
     fetch(url, {
       method: "GET",
       headers: {
@@ -79,36 +77,38 @@ function WpComments({
     return <p>Loading comments...</p>
   } else {
     return (
-      <div className="comments-area">
-        <div className="comments-title">
-          <h2>Comments section ({state.commentsNumber})</h2>
+      <TranslationsProvider overrides={translationOverrides}>
+        <div className="comments-area">
+          <div className="comments-title">
+            <h2>Comments section ({state.commentsNumber})</h2>
+          </div>
+          <div>
+            <ol className="comment-list">
+              {CommentTree(
+                state.topElements,
+                state.childrenElements,
+                maxDepth,
+                0,
+                state.parentId,
+                pageId,
+                restUrl,
+                setParentId,
+                allowComments,
+                user
+              )}
+            </ol>
+            {state.parentId === 0 ? (
+              <CreateComment
+                allowComments={allowComments}
+                pageId={pageId}
+                parentId={0}
+                restUrl={`${hostUrl}/wp-json/wp/v2/comments`}
+                user={user}
+              />
+            ) : null}
+          </div>
         </div>
-        <div>
-          <ol className="comment-list">
-            {CommentTree(
-              state.topElements,
-              state.childrenElements,
-              maxDepth,
-              0,
-              state.parentId,
-              pageId,
-              restUrl,
-              setParentId,
-              allowComments,
-              user
-            )}
-          </ol>
-          {state.parentId === 0 ? (
-            <CreateComment
-              allowComments={allowComments}
-              pageId={pageId}
-              parentId={0}
-              restUrl={`${hostUrl}/wp-json/wp/v2/comments`}
-              user={user}
-            />
-          ) : null}
-        </div>
-      </div>
+      </TranslationsProvider>
     )
   }
 }
