@@ -1,19 +1,20 @@
 import React from "react"
 
 export default function Form(props) {
-  function submitHandler(e) {
+  function onSubmitHandler(e) {
     e.preventDefault()
 
-    props.setState({
-      maxDepth: e.target.maxdepth.value,
+    props.setState(prevState => ({
+      maxDepth: +e.target.maxdepth.value,
       pageId: e.target.pageid.value,
       hostUrl: e.target.hosturl.value,
       allowComments: !!e.target.allowcomments.checked,
-    })
+      renderCount: prevState.renderCount + 1,
+    }))
   }
 
   return (
-    <form onSubmit={submitHandler} className="props-input-form">
+    <form onSubmit={onSubmitHandler} className="props-input-form">
       <p>{`<WpComments`}</p>
       <div style={{ paddingLeft: "20px" }}>
         <label>

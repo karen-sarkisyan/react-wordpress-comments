@@ -12,6 +12,7 @@ function Demo() {
     pageId: 2,
     hostUrl: "https://wpsite.locarb.io",
     allowComments: true,
+    renderCount: 0,
   })
 
   return (
@@ -65,6 +66,7 @@ function Demo() {
           hostUrl={state.hostUrl}
           allowComments={state.allowComments}
           user={null}
+          key={state.renderCount}
         />
       </div>
     </div>
