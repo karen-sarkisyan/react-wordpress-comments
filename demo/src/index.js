@@ -50,8 +50,7 @@ function Demo() {
 
         <p>
           Note: you need to use https protocol in URL, otherwise your browser
-          won&apos;t allow fetching data from this page. Re-fetching only
-          happens when you change hostUrl or pageId prop values
+          won&apos;t allow fetching data from this page.
         </p>
         <p>
           The react-wordpress-comments component is rendered below the
