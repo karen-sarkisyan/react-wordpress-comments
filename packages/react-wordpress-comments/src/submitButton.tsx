@@ -1,11 +1,15 @@
-import React from "react"
+import * as React from "react"
 import Loader from "./loader"
 
-export default function SubmitButton(props) {
-  if (props.submitting) {
+type SubmitButtonProps = {
+  isSubmitting: boolean
+}
+
+export default function SubmitButton({ isSubmitting }: SubmitButtonProps) {
+  if (isSubmitting) {
     return (
       <div className="comment-submit">
-        <button>Submit</button>
+        <button disabled>Submit</button>
         <Loader />
       </div>
     )

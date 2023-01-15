@@ -1,8 +1,10 @@
-export default function separateParentsChildren(elements) {
+import { CommentData } from "../typings"
+
+export default function separateParentsChildren(elements: CommentData[]) {
   // Algorithm inspired by Wordpress's walk() function
   // Make two buckets -- parents and children
-  var topLevelElements = []
-  var childrenElements = []
+  var topLevelElements: CommentData[] = []
+  var childrenElements: Array<Array<CommentData>> = []
 
   // if empty array or undefined, return empty buckets
   if (!elements) {

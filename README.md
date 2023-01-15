@@ -79,7 +79,30 @@ function MyComponent() {
 render(<MyComponent />, document.querySelector("#root"))
 ```
 
-### User and authentication
+### Translations (optional)
+
+To override default strings pass an object to `translationOverrides` prop of the Component.
+
+Object structure is like this:
+
+```typescript
+type Translations = {
+  mainHeading?: string
+  leaveCommentHeading?: string
+  loadingCommentsLabel?: string
+  respondLinkLabel?: string
+  loggedInUserIntro?: string
+  nameInputLabel?: string
+  emailInputLabel?: string
+  commentInputLabel?: string
+  commentInputPlaceholder?: string
+  submitButtonLabel?: string
+  cancelLinkLabel?: string
+  commentsClosedNotice?: string
+}
+```
+
+### User and authentication (optional)
 
 `user` prop is an object that should look like this:
 
@@ -125,7 +148,7 @@ If you're using non-pretty permalinks, your REST API endpoint URL may be differe
 
 ## Alternative way to use this component
 
-Simply copy the content from `src/` folder of this repo and drop it into your React app's `src/components/wpComments` folder (or whatever structure you use). Then simply import it like you would any other component you've written. Don't forget to grab `/css/styles.css` file too if you need it :)
+Simply copy the content from `src/` folder of this repo and drop it into your React app's `src/components/wpComments` folder (or whatever structure you use). Then simply import it like you would any other component you've written. Don't forget to grab `/css/styles.css` file too if you need it.
 
 ## Styling
 
@@ -135,9 +158,9 @@ The package has a `styles.css` file that provides some basic styles and a loader
 import "react-wordpress-comments/css/styles.css"
 ```
 
-It uses very minimal styling, most of its look will be inherited so that the comments match overall style of your page. You can override styles by using more specific selectors.
+It uses very minimal styling, most of its look will be inherited so that the comments match overall style of your page. You can override styles by using more specific selectors. (See demo app for example.)
 
-Otherwise use your own stylesheet without importing component's styles at all. More comprehensive guide on styling coming soon, for now please refer to source code or your browser's devtools.
+Otherwise use your own stylesheet without importing component's styles at all.
 
 ## Ongoing development
 
@@ -146,17 +169,13 @@ Upgrades, features and bugfixes to come:
 - Error boundaries and better error handling. At this point the component may crash your app if there is an error ☹️
 - Tests and CI automation
 - Links processing. If you don't specify your frontend host in WordPress, the links within comments will point to your backend host.
-- Add an easy way to change text strings and implement i18n.
-- Implementing other types of authorization, including cookies.
-- Caching/storing of response. Now it fetches each time page loads.
-- Paginating requests.
-- Migrating to TypeScript
+- Pagination
 
 ## Contributing
 
 If you have a feedback or suggestion, just file an issue. Anything is welcome.
 
-To contribute to code, see [contributing guide](./CONTRIBUTING.md).
+To contribute to code, see [contributing guide](./CONTRIBUTING.md). But really, if you want to contribute, just do it :)
 
 ## License
 

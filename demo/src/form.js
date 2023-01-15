@@ -1,23 +1,24 @@
 import React from "react"
 
 export default function Form(props) {
-  function submitHandler(e) {
+  function onSubmitHandler(e) {
     e.preventDefault()
 
-    props.setState({
-      maxDepth: e.target.maxdepth.value,
+    props.setState(prevState => ({
+      maxDepth: +e.target.maxdepth.value,
       pageId: e.target.pageid.value,
       hostUrl: e.target.hosturl.value,
       allowComments: !!e.target.allowcomments.checked,
-    })
+      renderCount: prevState.renderCount + 1,
+    }))
   }
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={onSubmitHandler} className="props-input-form">
       <p>{`<WpComments`}</p>
       <div style={{ paddingLeft: "20px" }}>
         <label>
-          {"maxDepth = {"}
+          {"maxDepth={"}
           <input
             type="number"
             min="0"
@@ -31,13 +32,13 @@ export default function Form(props) {
         </label>
         <br />
         <label>
-          {"pageId = {"}
+          {"pageId={"}
           <input type="number" name="pageid" defaultValue={2} required></input>
           {"}"}
         </label>
         <label>
           <br />
-          {'hostUrl = {"'}
+          {'hostUrl={"'}
           <input
             type="url"
             name="hosturl"
@@ -48,14 +49,14 @@ export default function Form(props) {
         </label>
         <br />
         <label>
-          {"allowComments = {"}
+          {"allowComments={"}
           <input type="checkbox" name="allowcomments" defaultChecked></input>
           {"}"}
         </label>
         <br />
       </div>
       <p>{`/>`}</p>
-      <button style={{ marginTop: "10px" }}>Re-render below ⟲</button>
+      <button>Re-render below ⟲</button>
     </form>
   )
 }

@@ -1,4 +1,8 @@
-export default function apiSubmitHandler(response) {
+type Response = {
+  message?: string
+}
+
+export default function apiSubmitHandler(response: Response) {
   if (response.message) {
     return response.message
   } else {

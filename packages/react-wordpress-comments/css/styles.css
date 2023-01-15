@@ -17,6 +17,11 @@
   margin-top: 10px;
 }
 
+.comment-submit button:disabled {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .comment-avatar,
 .comment-meta {
   float: left;
@@ -46,6 +51,7 @@ fieldset input {
 .comment-respond textarea {
   display: block;
   width: 100%;
+  max-width: 100%;
 }
 
 .comment-list,

@@ -1,8 +1,21 @@
-import React from "react"
+import * as React from "react"
+
 import CreateComment from "./createComment"
 import ResponseLink from "./responseLink"
 
-function Comment(props) {
+import type { CommentData, User } from "./typings"
+
+type CommentProps = {
+  comment: CommentData
+  answeredTo: boolean
+  pageId: number
+  restUrl: string
+  setParentId: (id: number) => void
+  allowComments: boolean
+  user?: User
+}
+
+function Comment(props: CommentProps) {
   function responseClick(e) {
     e.preventDefault()
     props.setParentId(props.comment.id)
@@ -54,5 +67,5 @@ function Comment(props) {
     </li>
   )
 }
-// dangerouslySetInnerHTML={{ __html: props.comment.content.rendered }}
+
 export default Comment
